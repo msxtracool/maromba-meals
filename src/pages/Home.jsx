@@ -11,6 +11,7 @@ const Home = () => {
     const res = await fetch(url);
     const data = await res.json();
 
+   
     setTopMeals(data.results);
   };
 
@@ -21,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h2 className="title">Top Meals:</h2>
+      <h2 className="title">All Meals:</h2>
       <div className="meals-container">
         {topMeals.length === 0 && <p>Loading...</p>}
         {topMeals.length > 0 &&
