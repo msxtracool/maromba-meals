@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import MealCard from "../Components/MealCard";
 
-const mealsURL = import.meta.env.VITE_SEARCH; //API SPOONACULAR
-const apiKey = import.meta.env.VITE_API_KEY; //API KEY SPOONACULAR
+const localAPI = "http://localhost:3000/recipes";
 
 const Home = () => {
   const [topMeals, setTopMeals] = useState([]);
 
-  const getTopMeals = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-   
-    setTopMeals(data.results);
+  const getTopMeals = async () => {
+    try {
+      const res = await axios.get(localAPI);
+      setTopMeals(res.data);
+    } catch (error) {
+      console.error("Error fetching recipes", error);
+    }
   };
 
   useEffect(() => {
-    const topMealsURL = `${mealsURL}?apiKey=${apiKey}&addRecipeInformation=true&number=30`;
-    getTopMeals(topMealsURL);
+    getTopMeals();
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const Home = () => {
       <div className="meals-container">
         {topMeals.length === 0 && <p>Loading...</p>}
         {topMeals.length > 0 &&
-          topMeals.map((meals) => <MealCard key={meals.id} meals={meals} />)}
+          topMeals.map((meal) => <MealCard key={meal.id} meals={meal} />)}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const MealCard = ({ meals, showLink = true }) => {
       <img src={meals.image} alt={meals.title} />
       <h2>{meals.title}</h2>
       <p>
-        <FaLeaf style={{ color: "green" }} /> {meals.healthScore}
+        <FaLeaf style={{ color: "green" }} /> {meals.calories}
       </p>
       {showLink && <Link to={`/meals/${meals.id}`}>Description</Link>}
     </div>
