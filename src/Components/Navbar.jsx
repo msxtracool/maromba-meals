@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GiMeal } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -9,9 +10,9 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
- 
-    if(!search) return
-    navigate(`/search?q=${search}`)
+
+    if (!search) return;
+    navigate(`/search?q=${search}`);
     setSearch("");
   };
 
@@ -23,17 +24,24 @@ const Navbar = () => {
           Maromba Meals
         </Link>
       </h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Meal search"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-        />
-        <button type="submit">
-          <IoIosSearch />
-        </button>
-      </form>
+      <div className="nav-actions">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Meal search"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+          <button type="submit">
+            <IoIosSearch />
+          </button>
+        </form>
+
+        <Link to="/add-NewMeal" className="add-meal-link">
+          <IoIosAddCircleOutline size={30} color="#f7d354" />
+          <span> Add Meal</span>
+        </Link>
+      </div>
     </nav>
   );
 };

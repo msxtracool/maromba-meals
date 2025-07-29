@@ -22,7 +22,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h2 className="title">All Meals:</h2>
+      <h2 className="title">Meals Gallery:</h2>
       <div className="meals-container">
         {topMeals.length === 0 && <p>Loading...</p>}
         {topMeals.length > 0 &&

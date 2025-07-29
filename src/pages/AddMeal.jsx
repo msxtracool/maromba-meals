@@ -31,7 +31,7 @@ const AddMeal = () => {
 
     try {
       await axios.post("http://localhost:3000/recipes", dataToSend);
-      alert("Meal adicionada com sucesso!");
+      alert("Meal Added!");
       navigate("/");
     } catch (error) {
       console.error("Erro adding meal", error);
