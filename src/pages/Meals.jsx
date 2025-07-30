@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const localAPI = "http://localhost:3000/recipes";
 
@@ -76,6 +76,21 @@ const Meals = () => {
               <li>Calories:{meal.calories}</li>
             </ul>
           </section>
+          <Link
+            to="/"
+            style={{
+              display: "inline-block",
+              margin: "1rem 0",
+              padding: "0.3rem 1rem",
+              backgroundColor: "#f5d152ff",
+              color: "#363636ff",
+              borderRadius: "5px",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            ← Back
+          </Link>
         </div>
       </div>
     </div>

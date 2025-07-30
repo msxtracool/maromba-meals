@@ -21,7 +21,7 @@ const Navbar = () => {
       <h2>
         <Link to="/">
           <GiMeal />
-          Maromba Meals
+          Maromba Meals Logs
         </Link>
       </h2>
       <div className="nav-actions">

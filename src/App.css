@@ -26,7 +26,7 @@ a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
   z-index: 1000;
 
   display: flex;
@@ -165,32 +165,31 @@ a:hover {
 /*Description Page*/
 
 .page {
-  padding-top: 100px; 
+  padding-top: 100px;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-
 /* ADD MEAL FORM */
 .add-meal-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 100px 2rem 2rem;
+  padding: 80px 1.5rem 1.5rem;
   color: #fff;
 }
 
 .add-meal-container h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.7rem;
   color: #f7d354;
 }
 
 .add-meal-container form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   background-color: #1a1a1a;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
 }
 
@@ -198,13 +197,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .add-meal-container input[type="text"],
 .add-meal-container input[type="number"],
 .add-meal-container input[type="url"] {
-  padding: 0.8rem;
+  padding: 0.6rem;
   border: none;
   border-radius: 4px;
   background-color: #333;
@@ -223,15 +222,31 @@ a:hover {
   border: 2px solid #f7d354;
   border-radius: 4px;
   color: #000;
-  padding: 1rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   font-weight: bold;
   cursor: pointer;
   transition: 0.4s;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .add-meal-container button[type="submit"]:hover {
   background-color: #b8930c;
   border-color: #b8930c;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  height: 6vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8930c;
+  font-size: 0.9rem;
+  z-index: 1000;
 }

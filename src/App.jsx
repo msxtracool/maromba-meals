@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 import Home from "./pages/Home.jsx";
 import Meals from "./pages/Meals.jsx";
@@ -12,13 +13,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meals/:id" element={<Meals />} />
         <Route path="/search" element={<Search />} />
         <Route path="/add-NewMeal" element={<AddMeal />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
