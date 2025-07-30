@@ -162,6 +162,15 @@ a:hover {
   font-weight: bold;
 }
 
+/*Description Page*/
+
+.page {
+  padding-top: 100px; 
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
 /* ADD MEAL FORM */
 .add-meal-container {
   max-width: 800px;

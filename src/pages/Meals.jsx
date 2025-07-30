@@ -33,48 +33,50 @@ const Meals = () => {
   if (!meal) return <p>Meal not found 😢</p>;
 
   return (
-    <div
-      className="meal-card"
-      style={{
-        maxWidth: "600px",
-        margin: "2rem auto",
-        padding: "1rem",
-        backgroundColor: "#111",
-        borderRadius: "10px",
-        color: "#fff",
-        boxShadow: "0 0 10px rgba(0,0,0,0.7)",
-      }}
-    >
-      <img
-        src={meal.image}
-        alt={meal.title}
+    <div className="page">
+      <div
+        className="meal-card"
         style={{
-          width: "100%",
-          height: "250px",
-          objectFit: "cover",
-          borderRadius: "8px",
-          marginBottom: "1rem",
+          maxWidth: "600px",
+          margin: "2rem auto",
+          padding: "1rem",
+          backgroundColor: "#111",
+          borderRadius: "10px",
+          color: "#fff",
+          boxShadow: "0 0 10px rgba(0,0,0,0.7)",
         }}
-      />
-      <div style={{ margin: "1rem" }}>
-        <section>
-          <h3>Ingredients:</h3>
-          <ul>
-            {meal.ingredients.map((ingredient, idx) => (
-              <li key={idx}>{ingredient}</li>
-            ))}
-          </ul>
-        </section>
+      >
+        <img
+          src={meal.image}
+          alt={meal.title}
+          style={{
+            width: "100%",
+            height: "250px",
+            objectFit: "cover",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+          }}
+        />
+        <div style={{ margin: "1rem" }}>
+          <section>
+            <h3>Ingredients:</h3>
+            <ul>
+              {meal.ingredients.map((ingredient, idx) => (
+                <li key={idx}>{ingredient}</li>
+              ))}
+            </ul>
+          </section>
 
-        <section style={{ marginTop: "1rem" }}>
-          <h3>Macros:</h3>
-          <ul>
-            <li>Protein:{meal.Protein}</li>
-            <li>Carbs: {meal.Carbs}</li>
-            <li>Fat:{meal.Fat}</li>
-            <li>Calories:{meal.calories}</li>
-          </ul>
-        </section>
+          <section style={{ marginTop: "1rem" }}>
+            <h3>Macros:</h3>
+            <ul>
+              <li>Protein:{meal.Protein}</li>
+              <li>Carbs: {meal.Carbs}</li>
+              <li>Fat:{meal.Fat}</li>
+              <li>Calories:{meal.calories}</li>
+            </ul>
+          </section>
+        </div>
       </div>
     </div>
   );
