@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GiMeal } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosAdd } from "react-icons/io";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
@@ -25,6 +25,10 @@ const Navbar = () => {
         </Link>
       </h2>
       <div className="nav-actions">
+        <Link to="/add-NewMeal" className="add-meal-link">
+          <IoIosAdd size={30} color="#f7d354" />
+          <span> Add Meal</span>
+        </Link>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -36,11 +40,6 @@ const Navbar = () => {
             <IoIosSearch />
           </button>
         </form>
-
-        <Link to="/add-NewMeal" className="add-meal-link">
-          <IoIosAddCircleOutline size={30} color="#f7d354" />
-          <span> Add Meal</span>
-        </Link>
       </div>
     </nav>
   );

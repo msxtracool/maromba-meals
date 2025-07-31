@@ -6,6 +6,8 @@ import Home from "./pages/Home.jsx";
 import Meals from "./pages/Meals.jsx";
 import Search from "./pages/Search.jsx";
 import AddMeal from "./pages/AddMeal.jsx";
+import NotFoundPage from "./pages/NotFoundPage";
+import AboutPage from "./pages/AboutPage";
 
 import "./App.css";
 
@@ -18,6 +20,8 @@ function App() {
         <Route path="/meals/:id" element={<Meals />} />
         <Route path="/search" element={<Search />} />
         <Route path="/add-NewMeal" element={<AddMeal />} />
+        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+//Form initial state
 const AddMeal = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -13,9 +14,11 @@ const AddMeal = () => {
     image: "",
   });
 
+  //Redirect to home page after sending form
+
   const navigate = useNavigate();
 
-  // Update form values
+  // Update and submit form values
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -39,9 +42,10 @@ const AddMeal = () => {
     }
   };
 
+  //Render the form
   return (
     <div className="add-meal-container">
-      <h2>Add New Meal</h2>
+      <h2>New Meal</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Title:
@@ -121,7 +125,7 @@ const AddMeal = () => {
           />
         </label>
 
-        <button type="submit">Add Meal</button>
+        <button type="submit">Add</button>
       </form>
     </div>
   );

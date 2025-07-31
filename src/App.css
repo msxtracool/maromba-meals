@@ -19,7 +19,6 @@ a {
 a:hover {
   color: #b8930c;
 }
-
 /*NavBar*/
 #navbar {
   position: fixed;
@@ -241,7 +240,7 @@ a:hover {
   left: 0;
   width: 100%;
   background-color: #1a1a1a;
-  height: 6vh;
+  height: 10vh;
   text-align: center;
   display: flex;
   align-items: center;
@@ -249,4 +248,20 @@ a:hover {
   color: #b8930c;
   font-size: 0.9rem;
   z-index: 1000;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-content a {
+  color: #b8930c;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
 }
