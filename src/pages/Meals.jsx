@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const localAPI = "http://localhost:3000/recipes";
 
@@ -7,6 +8,7 @@ const Meals = () => {
   const { id } = useParams();
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // Para redirecionar após deletar
 
   useEffect(() => {
     const getMeal = async () => {
@@ -28,6 +30,29 @@ const Meals = () => {
       getMeal();
     }
   }, [id]);
+
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this meal?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      // Requisição DELETE usando axios
+      const res = await axios.delete(`${localAPI}/${id}`);
+
+      // Verifica se a resposta foi ok
+      if (res.status === 200) {
+        alert("Meal deleted successfully!");
+        navigate("/"); // Redireciona para a página inicial
+      } else {
+        alert("Failed to delete the meal.");
+      }
+    } catch (error) {
+      console.error("Error deleting meal:", error);
+      alert("Something went wrong while deleting.");
+    }
+  };
 
   if (loading) return <p>Loading...</p>;
   if (!meal) return <p>Meal not found 😢</p>;
@@ -76,21 +101,20 @@ const Meals = () => {
               <li>Calories:{meal.calories}</li>
             </ul>
           </section>
-          <Link
-            to="/"
+          <div
             style={{
-              display: "inline-block",
-              margin: "1rem 0",
-              padding: "0.3rem 1rem",
-              backgroundColor: "#f5d152ff",
-              color: "#363636ff",
-              borderRadius: "5px",
-              textDecoration: "none",
-              fontWeight: "bold",
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "1rem",
             }}
           >
-            ← Back
-          </Link>
+            <Link to={`/edit/${meal.id}`} className="edit-button">
+              Edit
+            </Link>
+            <button onClick={handleDelete} className="edit-button">
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>

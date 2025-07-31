@@ -7,7 +7,7 @@ const AboutPage = () => {
         padding: "2rem 1rem",
         paddingTop: "100px", // esse valor depende da altura do seu Navbar
         paddingBottom: "10vh", // espaço pro Footer
-        margin: "rem",
+        margin: "0.9rem",
         color: "#fff",
         minHeight: "100vh",
         backgroundColor: "#000", // opcional, só pra destacar

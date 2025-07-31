@@ -233,6 +233,20 @@ a:hover {
   background-color: #b8930c;
   border-color: #b8930c;
 }
+/*EDIT BUTTON*/
+.edit-button {
+  background-color: #f7d354;
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem;
+  border-radius: 8px;
+  color: #000;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #ffe58a;
+}
 
 .footer {
   position: fixed;
@@ -240,7 +254,7 @@ a:hover {
   left: 0;
   width: 100%;
   background-color: #1a1a1a;
-  height: 10vh;
+  height: 8vh;
   text-align: center;
   display: flex;
   align-items: center;
@@ -260,8 +274,4 @@ a:hover {
 .footer-content a {
   color: #b8930c;
   text-decoration: none;
-}
-
-.footer-content a:hover {
-  text-decoration: underline;
 }
