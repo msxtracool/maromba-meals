@@ -19,7 +19,9 @@ const EditMeal = () => {
   useEffect(() => {
     const fetchMeal = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/recipes/${id}`);
+        const res = await axios.get(
+          `${import.meta.env.VITE_JSONSERVER_URL}/recipes/${id}`
+        );
         const meal = res.data;
         setFormData({
           ...meal,
@@ -50,7 +52,10 @@ const EditMeal = () => {
     };
 
     try {
-      await axios.put(`http://localhost:3000/recipes/${id}`, updatedMeal);
+      await axios.put(
+        `${import.meta.env.VITE_JSONSERVER_URL}/recipes/${id}`,
+        updatedMeal
+      );
       alert("Refeição atualizada com sucesso!");
       navigate("/");
     } catch (error) {

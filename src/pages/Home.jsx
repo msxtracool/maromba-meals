@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MealCard from "../Components/MealCard";
 
-const localAPI = "http://localhost:3000/recipes";
+const localAPI = `${import.meta.env.VITE_JSONSERVER_URL}/recipes`;
 
 const Home = () => {
   const [topMeals, setTopMeals] = useState([]);

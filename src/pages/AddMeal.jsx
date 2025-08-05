@@ -33,7 +33,10 @@ const AddMeal = () => {
     };
 
     try {
-      await axios.post("http://localhost:3000/recipes", dataToSend);
+      await axios.post(
+        "import.meta.env.VITE_JSONSERVER_URL/recipes",
+        dataToSend
+      );
       alert("Meal Added!");
       navigate("/");
     } catch (error) {

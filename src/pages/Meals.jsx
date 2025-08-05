@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const localAPI = "http://localhost:3000/recipes";
+const localAPI = `${import.meta.env.VITE_JSONSERVER_URL}/recipes`;
 
 const Meals = () => {
   const { id } = useParams();
