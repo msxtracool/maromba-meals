@@ -34,7 +34,7 @@ const AddMeal = () => {
 
     try {
       await axios.post(
-        "import.meta.env.VITE_JSONSERVER_URL/recipes",
+        `${import.meta.env.VITE_JSONSERVER_URL}/recipes`,
         dataToSend
       );
       alert("Meal Added!");
