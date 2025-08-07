@@ -124,7 +124,7 @@ a:hover {
 }
 
 .meal-card:hover {
-  transform: scale(110%);
+  transform: scale(80%);
   transition: all 1s ease-in-out;
 }
 /*MEALS SINGLE CARD*/
