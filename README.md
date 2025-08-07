@@ -1,4 +1,4 @@
-![App Screenshot](./assets/Screenshot.png)
+![App Screenshot](./src/assets/Screenshot.png)
 
 Project Overview
 
