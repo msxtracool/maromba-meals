@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Home from "./pages/Home.jsx";
 import Meals from "./pages/Meals.jsx";
@@ -26,6 +28,18 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 //Form initial state
 const AddMeal = () => {
@@ -37,11 +38,11 @@ const AddMeal = () => {
         `${import.meta.env.VITE_JSONSERVER_URL}/recipes`,
         dataToSend
       );
-      alert("Meal Added!");
+      toast.success("Meal successfully added 🥬");
       navigate("/");
     } catch (error) {
       console.error("Erro adding meal", error);
-      alert("Erro adding meal");
+      toast.error("Erro adding meal");
     }
   };
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const localAPI = `${import.meta.env.VITE_JSONSERVER_URL}/recipes`;
 
@@ -43,14 +44,14 @@ const Meals = () => {
 
       // Verifica se a resposta foi ok
       if (res.status === 200) {
-        alert("Meal deleted successfully!");
+        toast.success("Meal successfully deleted");
         navigate("/"); // Redireciona para a página inicial
       } else {
-        alert("Failed to delete the meal.");
+        toast.error("Failed to delete the meal.");
       }
     } catch (error) {
       console.error("Error deleting meal:", error);
-      alert("Something went wrong while deleting.");
+      toast.error("Something went wrong");
     }
   };
 

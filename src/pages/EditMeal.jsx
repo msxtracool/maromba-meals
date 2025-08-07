@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const EditMeal = () => {
   const { id } = useParams(); // Get URL id
@@ -29,7 +30,7 @@ const EditMeal = () => {
         });
       } catch (err) {
         console.error("Error searching Meal", err);
-        alert("Data Error Meal Search.");
+        toast.error("Data Error Meal Search.");
       }
     };
 
@@ -56,11 +57,11 @@ const EditMeal = () => {
         `${import.meta.env.VITE_JSONSERVER_URL}/recipes/${id}`,
         updatedMeal
       );
-      alert("Refeição atualizada com sucesso!");
+      toast.success("Meal successfully updated");
       navigate("/");
     } catch (error) {
       console.error("Erro meal update", error);
-      alert("Erro meal update");
+      toast.error("Erro meal update");
     }
   };
 
