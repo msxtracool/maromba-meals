@@ -44,8 +44,7 @@ const Meals = () => {
       confirmButtonText: "Yes, delete!",
       cancelButtonText: "Cancel",
     });
-    if (!confirmDelete) return;
-
+    if (!confirmDelete.isConfirmed) return;
     try {
       // Requisição DELETE usando axios
       const res = await axios.delete(`${localAPI}/${id}`);
