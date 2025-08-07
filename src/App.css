@@ -123,6 +123,10 @@ a:hover {
   width: 100%;
 }
 
+.meal-card:hover {
+  transform:scale(110%);
+  transition: all 1s ease-in-out;
+}
 /*MEALS SINGLE CARD*/
 
 .meals-container div {

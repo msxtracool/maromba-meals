@@ -10,9 +10,10 @@ const Home = () => {
   const getTopMeals = async () => {
     try {
       const res = await axios.get(localAPI);
+      console.log(res.data)
       setTopMeals(res.data);
     } catch (error) {
-      console.error("Error fetching recipes", error);
+      console.log("Error fetching recipes", error);
     }
   };
 
