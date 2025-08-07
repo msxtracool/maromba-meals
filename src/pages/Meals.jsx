@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const localAPI = `${import.meta.env.VITE_JSONSERVER_URL}/recipes`;
 
@@ -33,9 +34,16 @@ const Meals = () => {
   }, [id]);
 
   const handleDelete = async () => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this meal?"
-    );
+    const confirmDelete = await Swal.fire({
+      title: "Are you sure?",
+      text: "Deleting this meal could mess with your macros. Proceed?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete!",
+      cancelButtonText: "Cancel",
+    });
     if (!confirmDelete) return;
 
     try {
