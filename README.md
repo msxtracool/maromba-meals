@@ -33,4 +33,3 @@ Technologies Used
 Frontend: React, HTML & CSS
 Backend: Node.js and Json-Server-Backend
 Database: Json-Server-Backend
-Styling: Tailwind CSS / Material-UI
